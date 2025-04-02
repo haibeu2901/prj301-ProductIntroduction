@@ -1,0 +1,15 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page pageEncoding="UTF-8" %>
+<h2>Suggest Products For You</h2>
+
+<div class="product-container">
+    <c:forEach var="p" items="${suggestProducts}">
+        <div class="product-card">
+            <img src=".${p.productImage}" alt="${p.productName}">
+            <div class="product-name">${p.productName}</div>
+            <div class="product-price">${p.priceToString} VNĐ</div>
+            <a href="${pageContext.request.contextPath}/PublicController?action=productDetail&productId=${p.productId}" class="view-detail">View</a>
+        </div>
+    </c:forEach>
+</div>

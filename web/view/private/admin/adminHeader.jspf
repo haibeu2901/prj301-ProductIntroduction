@@ -1,0 +1,67 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page pageEncoding="UTF-8" %>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand"><b style="color: red">${user.account}</b> ${user.lastName} ${user.firstName}</div>
+        </div>
+        <div class="navbar-header">
+            <c:url var="homeUrl" value="/AdminController?action=home"/>
+            <a class="navbar-brand" href="${homeUrl}">Home</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <c:url var="addAccountUrl" value="/AdminController?action=addAccount"/>
+                        <a class="" href="${addAccountUrl}">Add new Account</a>
+                    </li>
+                    <li>
+                        <c:url var="accountsListUrl" value="/AdminController?action=accountsList"/>
+                        <a class="" href="${accountsListUrl}">Accounts List</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <c:url var="addCategoryUrl" value="/StaffController?action=addCategory"/>
+                        <a class="" href="${addCategoryUrl}">Add new Category</a>
+                    </li>
+                    <li>
+                        <c:url var="categoriesListUrl" value="/StaffController?action=categoriesList"/>
+                        <a class="" href="${categoriesListUrl}">Categories List</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Product
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <c:url var="addProductUrl" value="/StaffController?action=addProduct"/>
+                        <a class="" href="${addProductUrl}">Add new Product</a>
+                    </li>
+                    <li>
+                        <c:url var="productsListUrl" value="/StaffController?action=productsList"/>
+                        <a class="" href="${productsListUrl}">Products List</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav navbar-nav navbar-right">
+                <a href="Logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
